@@ -156,3 +156,21 @@ aaaaaaaaaaaaaa”
 ```
 
 # Instructions
+
+
+## HOW TO RUN THE PROJECT
+    cd myapp
+    docker build -t myprojectimage .
+    docker run -p 5000:5000 -d --name mycontainer myprojectimage
+
+
+## HOW TO RUN THE TESTS
+    perform all the steps in "HOW TO RUN THE PROJECT" section if not already done
+    docker exec mycontainer pytest
+
+
+## Overview of the metrics
+I have included following metrics in my metrics endpoint -
+1. current cpu info and the load average - Helps to determine if the endpoint is very busy or not.
+2. Free Memory / Total Memory - > Helps to determine if the endpoint is starving for memory resource or not.
+3. Disk usage - > Helps us to determine if the host has enough disk space for proper functioning of the service.
